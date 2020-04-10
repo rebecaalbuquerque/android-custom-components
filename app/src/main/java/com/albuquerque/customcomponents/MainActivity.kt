@@ -1,4 +1,4 @@
-package com.albuquerque.custoncomponents
+package com.albuquerque.customcomponents
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

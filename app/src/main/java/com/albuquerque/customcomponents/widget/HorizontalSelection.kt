@@ -1,4 +1,4 @@
-package com.albuquerque.custoncomponents.widget
+package com.albuquerque.customcomponents.widget
 
 import android.content.Context
 import android.graphics.Color
@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.albuquerque.custoncomponents.R
+import com.albuquerque.customcomponents.R
 import kotlinx.android.synthetic.main.item_horizontal_selection.view.*
 import kotlinx.android.synthetic.main.layout_horizontal_selection.view.*
 

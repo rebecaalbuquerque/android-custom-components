@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.albuquerque.custoncomponents.widget.HorizontalSelection
+    <com.albuquerque.customcomponents.widget.HorizontalSelection
         android:id="@+id/horizontalSelection"
         android:layout_width="match_parent"
         android:layout_height="100dp"
