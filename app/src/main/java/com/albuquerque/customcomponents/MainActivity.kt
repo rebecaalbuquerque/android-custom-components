@@ -29,22 +29,27 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupHorizontalSelection() {
-        val list = mutableListOf("Opção 1", "Opção 2", "Opção 3", "Opção 4", "Opção 5")
+        val list = mutableListOf("Opção 1", "Opção 2", "Opção 3", "Opção 4", "Opção 5", "Último")
 
         with(horizontalSelection) {
-            setupHorizontalSelection(list, 0, false, "Primeiro", "Último")
+            setupHorizontalSelection(list, 0, false, "Primeiro")
 
             setOnHeadSelected {
                 Toast.makeText(context, "Head", Toast.LENGTH_LONG).show()
             }
 
-            setOnTailSelected {
-                Toast.makeText(context, "Tail", Toast.LENGTH_LONG).show()
+            setOnItemSelected(list.size - 1) {
+                Toast.makeText(context, "Seleção customizada, selecionando último index", Toast.LENGTH_LONG).show()
             }
 
             setOnItemSelected { position ->
                 Toast.makeText(context, "Index $position selecionado", Toast.LENGTH_LONG).show()
             }
+
+        }
+
+        btn.setOnClickListener {
+            horizontalSelection.forceSelection(list.size -1)
         }
 
     }

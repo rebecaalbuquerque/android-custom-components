@@ -16,4 +16,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:hsSelectedItemColor="#1592E6" />
 
+    <Button
+        android:id="@+id/btn"
+        app:layout_constraintTop_toBottomOf="@id/horizontalSelection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="teste"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
