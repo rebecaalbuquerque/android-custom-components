@@ -21,7 +21,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupTextLoading() {
+        var isShowingLoading = true
+        loadingTextView.showLoading()
 
+        btnLoadingTextView.text = getString(R.string.button_loadingtextview, "Hide")
+
+        btnLoadingTextView.setOnClickListener {
+           isShowingLoading = !isShowingLoading
+
+            if(isShowingLoading) {
+                btnLoadingTextView.text = getString(R.string.button_loadingtextview, "Hide")
+                loadingTextView.showLoading()
+            } else {
+                btnLoadingTextView.text = getString(R.string.button_loadingtextview, "Show")
+                loadingTextView.hideLoading()
+            }
+        }
     }
 
     private fun setupCalendar() {
@@ -48,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        btn.setOnClickListener {
+        btnHorizontalSelection.setOnClickListener {
             horizontalSelection.forceSelection(list.size -1)
         }
 

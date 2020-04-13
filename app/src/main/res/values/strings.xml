@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CustomComponents</string>
+    <string name="button_loadingtextview">%1$s LoadingTextView</string>
 </resources>

@@ -11,16 +11,38 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginTop="8dp"
+        app:hsSelectedItemColor="#1592E6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:hsSelectedItemColor="#1592E6" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn"
-        app:layout_constraintTop_toBottomOf="@id/horizontalSelection"
+        android:id="@+id/btnHorizontalSelection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="teste"/>
+        android:layout_marginTop="8dp"
+        android:text="Force HorizontalSelection"
+        app:layout_constraintTop_toBottomOf="@id/horizontalSelection" />
+
+    <com.albuquerque.customcomponents.widget.LoadingTextView
+        android:id="@+id/loadingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:minWidth="95dp"
+        android:text="R$ 20.056,04"
+        android:textColor="#494A4D"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnHorizontalSelection"
+        app:ltvLoadingTint="#DEDEDE" />
+
+    <Button
+        android:id="@+id/btnLoadingTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/loadingTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,4 +5,24 @@
         <attr name="hsSelectedItemColor" format="color" />
     </declare-styleable>
 
+    <declare-styleable name="LoadingTextView">
+        <attr name="ltvLoadingTint" format="color" />
+
+        <attr name="ltvTextAlignment" format="integer">
+            <enum name="inherit" value="0" />
+            <enum name="gravity" value="1" />
+            <enum name="textStart" value="2" />
+            <enum name="textEnd" value="3" />
+            <enum name="center" value="4" />
+            <enum name="viewStart" value="5" />
+            <enum name="viewEnd" value="6" />
+        </attr>
+
+        <attr name="android:minWidth" format="dimension" />
+        <attr name="android:text" format="string" />
+        <attr name="android:textSize" format="dimension" />
+        <attr name="android:fontFamily" format="string" />
+        <attr name="android:textColor" format="color" />
+    </declare-styleable>
+
 </resources>

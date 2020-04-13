@@ -27,6 +27,7 @@ class HorizontalSelection: ConstraintLayout {
     private var head: String? = null
 
     private var itemSelectedColor: Int = 0
+    private var isHeadSelectable: Boolean = true
 
     private var onHeadSelected: (() -> Unit)? = null
     private var onItemSelected: ((position: Int) -> Unit)? = null
@@ -66,6 +67,8 @@ class HorizontalSelection: ConstraintLayout {
         this.body = body
         this.head = head
 
+        this.isHeadSelectable = isHeadSelectable
+
         headView = findViewById(R.id.headText)
 
         headView?.text = head
@@ -93,11 +96,11 @@ class HorizontalSelection: ConstraintLayout {
      * */
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
-        setMeasuredDimension(measuredWidth, recyclerViewSelection.measuredHeight)
+        setMeasuredDimension(measuredWidth, recyclerViewSelection?.measuredHeight ?: 100)
     }
 
     fun setOnHeadSelected(onHead: () -> Unit) {
-        onHeadSelected = onHead
+        if(isHeadSelectable) onHeadSelected = onHead
     }
 
     fun setOnItemSelected(onItem: (position: Int) -> Unit) {
