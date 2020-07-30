@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.albuquerque.customcomponents.widget.HorizontalSelection
+    <com.albuquerque.customcomponents.widget.horizontalselection.HorizontalSelection
         android:id="@+id/horizontalSelection"
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -22,9 +22,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Force HorizontalSelection"
-        app:layout_constraintTop_toBottomOf="@id/horizontalSelection" />
+        app:layout_constraintTop_toBottomOf="@id/horizontalSelection"
+        tools:ignore="HardcodedText" />
 
-    <com.albuquerque.customcomponents.widget.LoadingTextView
+    <com.albuquerque.customcomponents.widget.loading.LoadingTextView
         android:id="@+id/loadingTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,7 +37,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnHorizontalSelection"
-        app:ltvLoadingTint="#DEDEDE" />
+        app:ltvLoadingTint="#DEDEDE"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/btnLoadingTextView"

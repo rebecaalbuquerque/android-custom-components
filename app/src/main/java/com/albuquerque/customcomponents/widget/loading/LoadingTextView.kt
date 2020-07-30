@@ -1,4 +1,4 @@
-package com.albuquerque.customcomponents.widget
+package com.albuquerque.customcomponents.widget.loading
 
 import android.content.Context
 import android.graphics.Color

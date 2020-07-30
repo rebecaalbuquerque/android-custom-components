@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">CustomComponents</string>
     <string name="button_loadingtextview">%1$s LoadingTextView</string>
+
+    <string name="tks_calendar_fim">Fim</string>
+    <string name="tks_calendar_inicio">Inicio</string>
 </resources>

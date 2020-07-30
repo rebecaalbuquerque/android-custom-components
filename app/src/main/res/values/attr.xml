@@ -25,4 +25,19 @@
         <attr name="android:textColor" format="color" />
     </declare-styleable>
 
+    <declare-styleable name="CustomCalendar">
+
+        <attr name="customCalendarType" format="integer">
+            <enum name="selection" value="0" />
+            <enum name="range" value="1" />
+        </attr>
+
+        <attr name="customCalendarAvailability" format="integer">
+            <enum name="all" value="0" />
+            <enum name="beforeCurrentDay" value="1" />
+            <enum name="afterCurrentDay" value="2" />
+        </attr>
+
+    </declare-styleable>
+
 </resources>
