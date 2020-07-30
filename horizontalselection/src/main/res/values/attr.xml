@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="HorizontalSelection">
+        <attr name="hsSelectedItemColor" format="color" />
+    </declare-styleable>
+
+</resources>

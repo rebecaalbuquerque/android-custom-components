@@ -1,8 +1,10 @@
 package com.albuquerque.customcomponents
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.albuquerque.customcalendar.CustomCalendar
+import com.albuquerque.customcomponents.CustomCalendarActivity.Companion.CALENDAR_AVAILABILITY
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -11,60 +13,30 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setupView()
-    }
-
-    private fun setupView() {
-        setupHorizontalSelection()
-        setupCalendar()
-        setupTextLoading()
-    }
-
-    private fun setupTextLoading() {
-        var isShowingLoading = true
-        loadingTextView.showLoading()
-
-        btnLoadingTextView.text = getString(R.string.button_loadingtextview, "Hide")
-
-        btnLoadingTextView.setOnClickListener {
-           isShowingLoading = !isShowingLoading
-
-            if(isShowingLoading) {
-                btnLoadingTextView.text = getString(R.string.button_loadingtextview, "Hide")
-                loadingTextView.showLoading()
-            } else {
-                btnLoadingTextView.text = getString(R.string.button_loadingtextview, "Show")
-                loadingTextView.hideLoading()
-            }
-        }
-    }
-
-    private fun setupCalendar() {
-
-    }
-
-    private fun setupHorizontalSelection() {
-        val list = mutableListOf("Opção 1", "Opção 2", "Opção 3", "Opção 4", "Opção 5", "Último")
-
-        with(horizontalSelection) {
-            setupHorizontalSelection(list, 0, false, "Primeiro")
-
-            setOnHeadSelected {
-                Toast.makeText(context, "Head", Toast.LENGTH_LONG).show()
-            }
-
-            setOnItemSelected(list.size - 1) {
-                Toast.makeText(context, "Seleção customizada, selecionando último index", Toast.LENGTH_LONG).show()
-            }
-
-            setOnItemSelected { position ->
-                Toast.makeText(context, "Index $position selecionado", Toast.LENGTH_LONG).show()
-            }
-
+        btnGoToHorizontalSelection.setOnClickListener {
+            startActivity(Intent(this, HorizontalSelectionActivity::class.java))
         }
 
-        btnHorizontalSelection.setOnClickListener {
-            horizontalSelection.forceSelection(list.size -1)
+        btnGoToLoading.setOnClickListener {
+            startActivity(Intent(this, LoadingActivity::class.java))
+        }
+
+        btnGoToCustomCalendarStandard.setOnClickListener {
+            startActivity(Intent(this, CustomCalendarActivity::class.java).apply {
+                putExtra(CALENDAR_AVAILABILITY, CustomCalendar.CalendarAvailability.ALL.value)
+            })
+        }
+
+        btnGoToCustomCalendarBefore.setOnClickListener {
+            startActivity(Intent(this, CustomCalendarActivity::class.java).apply {
+                putExtra(CALENDAR_AVAILABILITY, CustomCalendar.CalendarAvailability.BEFORE_CURRENT_DAY.value)
+            })
+        }
+
+        btnGoToCustomCalendarAfter.setOnClickListener {
+            startActivity(Intent(this, CustomCalendarActivity::class.java).apply {
+                putExtra(CALENDAR_AVAILABILITY, CustomCalendar.CalendarAvailability.AFTER_CURRENT_DAY.value)
+            })
         }
 
     }
