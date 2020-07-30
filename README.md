@@ -8,4 +8,6 @@ A set of custom components created throughout my professional career as an Andro
 Simple component that has a text header and a list of clickable items, where is possible to tell what happens on the click of all items. It's also possible to customize a click for a given index in the list. 
 
 ## Loading Text View
-Simple component that ....
+
+
+## Custom Calendar
